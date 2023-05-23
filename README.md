@@ -1,9 +1,6 @@
 # superpwrsaver
 ### A minimalist powersaving utility designed for ASUS laptops on Linux.
 
-## Dependancies
-- Xrandr (Optional)
-
 ## Features 
 - A minimalist powersaving utility with planned custom brightness in the future.
 - Written in shell, making it easy to modify to your own laptop's needs.
