@@ -1,0 +1,38 @@
+#!/bin/sh
+
+usage() {
+	printf "Usage: superpwrsaver [OPTION]..\n"
+	printf " -v		Display version\n"
+	printf " -e		Enable the program\n"
+	printf " -d		Disable the program\n"
+}
+
+# In the unlikely event of an error, it will notify the user
+die() {
+	printf "\033[1;37m%s: \e[0m%s\n" ERROR "$*"
+	exit 1
+}
+
+# Display the version
+version () {
+	printf "\nsuperpwrsaver v0.0.1\n\n"
+}
+
+on () {
+	echo 50 > /sys/class/backlight/amdgpu_bl0/brightness &
+	echo 0 > /sys/class/leds/asus\:\:kbd_backlight/brightness &
+
+}
+
+off () {
+	echo 255 > /sys/class/backlight/amdgpu_bl0/brightness &
+	echo 3 > /sys/class/leds/asus\:\:kbd_backlight/brightness &
+
+}
+
+case "$1" in
+	-v) version;;
+	-e) on;;
+	-d) off;;
+	*) usage; exit 1;;
+esac
