@@ -15,5 +15,8 @@ or you might want something that is minimalist, fast and just works.
 
 ## FAQ
 
-- Q: Does my laptop need to be ASUS to use this? A: No, but I probably won't support it until I get a release I deem to be stable.
-- Q: Why is it called "superpwrsaver"? A: It is because it is similar to an ASUS-Linux tool called supergfxctl.
+- Q: Does my laptop need to be ASUS to use this? 
+- A: No, but I probably won't support it until I get a release I deem to be stable.
+
+- Q: Why is it called "superpwrsaver"? 
+- A: It is because it is similar to an ASUS-Linux tool called supergfxctl.
