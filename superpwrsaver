@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
+#Variables for the screen brightness and keyboard backlight directory
 usage() {
 	printf "Usage: superpwrsaver [OPTION]..\n"
 	printf " -v		Display version\n"
-	printf " -e		Enable the program\n"
-	printf " -d		Disable the program\n"
+	printf " -s		Power saving mode\n"
+	printf " -d		Set back to default\n"
 }
 
 # In the unlikely event of an error, it will notify the user
@@ -15,24 +16,25 @@ die() {
 
 # Display the version
 version () {
-	printf "\nsuperpwrsaver v0.0.1\n\n"
+	printf "\nsuperpwrsaver v0.0.2\n\n"
 }
 
-on () {
-	echo 50 > /sys/class/backlight/amdgpu_bl0/brightness &
-	echo 0 > /sys/class/leds/asus\:\:kbd_backlight/brightness &
-
+# Enable power saving mode
+pwrsave () {
+	echo 50 > /sys/class/backlight/*/brightness &
+	echo 0 >  /sys/class/leds/*kbd_backlight/brightness &
+	exit 0
 }
 
-off () {
-	echo 255 > /sys/class/backlight/amdgpu_bl0/brightness &
-	echo 3 > /sys/class/leds/asus\:\:kbd_backlight/brightness &
-
+# Disable powersaving mode
+default () {
+	echo 255 > /sys/class/backlight/*/brightness &
+	echo 3 > /sys/class/leds/*kbd_backlight/brightness &
 }
 
 case "$1" in
 	-v) version;;
-	-e) on;;
-	-d) off;;
+	-s) pwrsave;;
+	-d) default;;
 	*) usage; exit 1;;
 esac

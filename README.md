@@ -3,7 +3,7 @@
 
 ## Features 
 - A minimalist powersaving utility with planned custom brightness in the future.
-- Written in shell, making it easy to modify to your own laptop's needs.
+- Written in bash, making it easy to modify to your own laptop's needs.
 - First class support for ASUS laptops.
 
 ## Why this instead of ASUS-Linux
