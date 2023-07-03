@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#Variables for the screen brightness and keyboard backlight directory
 usage() {
 	printf "Usage: superpwrsaver [OPTION]..\n"
 	printf " -v		Display version\n"
